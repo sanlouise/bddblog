@@ -10,7 +10,7 @@ RSpec.feature "Creating Articles" do
     fill_in "Body", with: "Lorem Ipsum"
     click_button "Create Article"
     
-    expect(page).to have_content("Article has been created")
+    expect(page).to have_content("Your article was created successfully!")
     expect(page.current_path).to eq(articles_path)
     
   end
@@ -24,7 +24,7 @@ RSpec.feature "Creating Articles" do
     fill_in "Body", with: " "
     click_button "Create Article"
     
-    expect(page).to have_content("Article has not been created")
+    expect(page).to have_content("Your article was not created!")
     expect(page).to have_content("Title can't be blank")
     expect(page).to have_content("Body can't be blank")
     
