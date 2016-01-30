@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-.navbar.navbar-default.navbar-fixed-top{
-  margin-bottom: 15px;
+body {
+  padding-top: 60px;
+  background: #8F1D21;
+  color: white;
+  font-family: 'Lato', sans-serif;
 }
