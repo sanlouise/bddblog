@@ -14,3 +14,23 @@ h2 {
   margin-bottom: 20px;
   text-align: center;
 }
+
+.article-title, .article-body {
+  padding-left: 0.7em;
+}
+
+.article.body {
+  font-size: 1em;
+  color: black !important;
+}
+
+.article.title {
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#new-article-btn {
+  margin-bottom: 10px;
+}
+
