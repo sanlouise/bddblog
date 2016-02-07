@@ -98,3 +98,31 @@ h2 {
   margin-top: 20px;
   margin-left: 10px;
 }
+
+.alert-error {
+  background-color: #C3272B;
+  border-color: #C3272B;
+  color: white;
+  text-align: center;
+}
+
+.alert-alert {
+  background-color: #59ABE3;
+  border-color: #59ABE3;
+  color: white;
+  text-align: center;
+}
+
+.alert-success {
+  background-color: #26A65B;
+  border-color: #26A65B;
+  color: white;
+  text-align: center;
+}
+
+.alert-notice {
+  background-color: #F9690E;
+  border-color: #F9690E;
+  color: white;
+  text-align: center;
+}

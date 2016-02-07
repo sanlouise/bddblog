@@ -9,18 +9,8 @@
 <body>
 <%= render 'layouts/navigation' %>
 <%= render 'layouts/messages' %>
-
-<div class="row">
-  <div class="col-md-10- col-md-offset-1">
-
-      <%= yield %>
-
-    <div class="col-md-4">
-      <%= yield :sidebar %>
-    </div> 
-    
-  </div>
-</div>
+<%= yield %>
+<%= render 'layouts/footer' %>
 
 
 </body>
