@@ -12,7 +12,7 @@ RSpec.describe ArticlesController, type: :controller do
       it "renders edit template" do
         login_user @john
         article = Article.create(title: "First article", body: "Hello hello", user: @john)
-        
+      
         get :edit, id: article
         expect(response).to render_template :edit
       end

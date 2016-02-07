@@ -1,20 +1,26 @@
 class CommentsController < ApplicationController
   
+  before_action :set_article
+  
   def create
-    @comment = @article.comments.build(comment_params)
-    @comment.user = current_user
-    
-    if @comment.save 
-      flash[:success] = "Your comment was added successfully."
+    unless current_user
+      flash[:danger] = "Please login or sign up first."
+      redirect_to new_user_session_path
     else
-      flash[:danger] = "Oops.. something went wrong. Your comment was not added."
-    end
+      @comment = @article.comments.build(comment_params)
+      @comment.user = current_user
+      if @comment.save
+        flash[:success] = "Comment was created successfully."
+      else
+        flash.now[:danger] = "Comment was not created."
+      end
       redirect_to article_path(@article)
+    end
   end
   
   private
     def comment_params
-      params.require(:comment).permit(@article)
+      params.require(:comment).permit(:body)
     end
     
     def set_article
