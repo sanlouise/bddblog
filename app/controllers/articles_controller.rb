@@ -22,27 +22,29 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-
+    if @article.user != current_user
+      flash[:danger] = "You can only edit your own articles."
+      redirect_to root_path
+    end
   end
   
   def update
-
-    if @article.update(article_params)
-      flash[:success] = "Article was updated successfully."
-      redirect_to @article
+    if @article.user != current_user
+      flash[:danger] = "You can only edit your own articles."
+      redirect_to root_path
+    elsif @article.update(article_params)
+        flash[:success] = "Article was updated successfully."
+        redirect_to @article
     else
       flash.now[:danger] = "Oops, something went wrong. Article could not be updated."
       render :edit
     end
   end
   
-  
   def show
-
   end
   
   def destroy
-
     if @article.destroy
       flash[:success] = "Your article was deleted successfully."
       redirect_to articles_path
