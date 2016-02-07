@@ -14,6 +14,11 @@
               <div class="article-body">
                 <%= truncate(article.body, lenght: 300) %>
               </div>
+              <div class="author">
+                <% if article.user %>
+                  <small>Created by: <%= article.user.first_name %></small>
+                <% end %>
+              </div>
             </div>
           <% end %>
         </div>
