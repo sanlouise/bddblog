@@ -9,7 +9,7 @@ RSpec.feature "Users log in" do
   scenario "Valid Credentials" do
     visit "/"
     
-    click_link "Log In"
+    click_link "Login"
     
 
     fill_in "Email", with: @john.email
@@ -18,6 +18,7 @@ RSpec.feature "Users log in" do
     click_button "Log in"
     
     expect(page).to have_content("Signed in successfully.")
-    expect(page).to have_content("Signed in as #{@john.email}")
+    expect(page).to have_content("#{@john.first_name}")
   end
+  
 end
