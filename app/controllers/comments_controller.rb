@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       @comment = @article.comments.build(comment_params)
       @comment.user = current_user
       if @comment.save
-        flash[:success] = "Comment was created successfully."
+        flash[:success]= "Your comment was created successfully!"
       else
         flash.now[:danger] = "Comment was not created."
       end

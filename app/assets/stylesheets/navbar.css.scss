@@ -15,7 +15,7 @@
 
 
 .navbar {
-  background-color: #5D3F6A;
+  background-color: #003171;
 }
 
 #logo {
@@ -48,11 +48,11 @@ ul.nav.navbar-nav.li.a:focus {
 }
 
 ul.dropdown-menu {
-  background-color: #C3272B !important;
+  background-color: #1F4788 !important;
 }
 
 ul.dropdown-menu li :hover {
-  background-color: #8F1D21 !important;
+  background-color: #4B77BE !important;
 }
 
 ul.dropdown-menu li a{
@@ -73,4 +73,7 @@ ul.dropdown-menu li a{
   color:white !important;
 }
 
+a.dropdown-toggle{
+  background-color: #1F4788 !important;
+}
 // End Profile Dropdown
