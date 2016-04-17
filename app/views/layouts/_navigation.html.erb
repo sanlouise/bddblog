@@ -1,22 +1,8 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "BDD Bloggy", root_path, class: "navbar-brand", id: "logo" %>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      
-      <!--Right Navbar-->
-      <ul class="nav navbar-nav navbar-right">
+<nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">BDD Bloggy</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
         <% if user_signed_in? %>
           
           <!--User Dropdown Menu-->
@@ -38,7 +24,27 @@
           
         <% end %>
       </ul>
-      
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      <ul class="side-nav" id="mobile-demo">
+        <% if user_signed_in? %>
+          
+          <!--User Dropdown Menu-->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'My Profile', '#' %></li>
+              <li><%= link_to 'Edit Profile', '#' %></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout" %></li>
+            </ul>
+          </li>
+          
+        <% else %>
+        
+          <!--Sign Up and Login Buttons-->
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
+          
+        <% end %>
+      </ul>
+    </div>
 </nav>
