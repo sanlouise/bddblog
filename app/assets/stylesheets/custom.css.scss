@@ -137,3 +137,14 @@ h2 {
   padding-top: 10px
   
 }
+
+.image.responsive.home-bg {
+  background-image: image-url("background.jpg");
+  background-size: 100%;
+  background-repeat:no-repeat;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size:cover;
+  background-position:center;
+}
