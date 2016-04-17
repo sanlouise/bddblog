@@ -1,9 +1,8 @@
 <article-class="detail-article">
   <h1 class="article-detail-title text-center"><%= @article.title %></h1>
   
-  <div class="glyphicon glyphicon-calendar" id="article-date">
-    <%= @article.created_at.strftime("%b %d, %Y") %>
-    
+  <div class="author-date">
+    <%= @article.created_at.strftime("%b %d, %Y") %>. Created by <%= @article.user.first_name %>
   </div>
   
   <div class="article-body">
@@ -44,10 +43,7 @@
     
     <!--Comment Body-->
     <div class='form-group'>
-      <div class='control-label col-md-2'>
-        <%= f.label :body, 'New Comment' %>
-      </div>
-      <div class='col-md-10'>
+      <div class='col-md-12'>
         <%= f.text_area :body, rows: 10, class: 'form-control', placeholder: 'Your comment' %>
       </div>
     </div>
@@ -65,9 +61,7 @@
 <!--Article Comments-->
 
 <div class='col-md-12'>
-  <header>
-    <h2>Comments</h2>
-  </header>
+  <h4 class="center">Comments</h4>
   <div class="col-md-8 col-md-offset-2">
     <% if @article.comments.any? %>
       <% @article.comments.persisted.each do |comment| %>
