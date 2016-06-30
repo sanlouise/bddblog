@@ -4,20 +4,11 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <% if user_signed_in? %>
-          
-          <!--User Dropdown Menu-->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.first_name %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'My Profile', '#' %></li>
-              <li><%= link_to 'Edit Profile', '#' %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout" %></li>
-            </ul>
-          </li>
-          
-        <% else %>
         
-          <!--Sign Up and Login Buttons-->
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout" %></li>
+
+        <% else %>
+
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
           
